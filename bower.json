@@ -1,0 +1,27 @@
+{
+  "name": "kickstart-style",
+  "version": "0.1",
+  "authors": [
+    "Martin Thøgersen <martin@webnuts.com>"
+  ],
+  "description": "Neat grid, mixins and helpful functions",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "scss"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.webnuts.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "neat": "~1.7.2",
+    "bourbon": "~4.2.6"
+  }
+}

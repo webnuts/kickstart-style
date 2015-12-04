@@ -1,0 +1,57 @@
+@import "mixins/vertical-center-child";
+
+@mixin grid($vertical-gap:10, $breakpoints:()) {
+  @if length($breakpoints) > 0 and type-of($breakpoints) != 'map' {
+    @error 'Breakpoints has to be a map.'
+  }
+
+  .grid {
+    &-vertical-center-child {
+      @include vertical-center-child();
+    }
+
+    &-full-height {
+      height: 100%;
+    }
+
+    @include build-grid($vertical-gap);
+
+    @each $name, $breakpoint in $breakpoints {
+      @include media($breakpoint) {
+        @include build-grid($vertical-gap, '-' + $name);
+      }
+    }
+  }
+}
+
+@mixin build-grid($vertical-gap, $prefix:'') {
+  &#{$prefix}-outer-container {
+    @include outer-container;
+  }
+  &#{$prefix}-omega {
+    @include omega();
+  }
+  &#{$prefix}-fill-parent {
+    @include fill-parent();
+  }
+  @for $column-index from 1 through $grid-columns {
+    &#{$prefix}-span#{$column-index} {
+      @include span-columns($column-index);
+    }
+  }
+  @for $column-index from 1 through $grid-columns - 1 {
+    &#{$prefix}-shift#{$column-index} {
+      @include shift($column-index);
+    }
+  }
+  @for $column-index from 1 through $grid-columns {
+    &#{$prefix}-omega#{$column-index} {
+      @include omega(#{$column-index}n);
+    }
+  }
+  @for $gap-index from 1 through 10 {
+    &#{$prefix}-gap#{$gap-index}-below {
+      margin-bottom: $vertical-gap * $gap-index + px;
+    }
+  }
+}
