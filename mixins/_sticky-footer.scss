@@ -1,0 +1,53 @@
+/*
+Minimal example:
+<html class="sticky-footer">
+  <body>
+    <div class="sticky-footer-page-content-wrapper">
+      ... page content here ...
+    </div>
+    <footer class="sticky-footer-wrapper">
+      ... footer content here ...
+    </footer>
+  </body>
+</html>
+*/
+@mixin sticky-footer($footer-height, $breakpoints:()) {
+  @if length($breakpoints) > 0 and type-of($breakpoints) != 'map' {
+    @error 'Breakpoints has to be a map.'
+  }
+
+  &, > body {
+    height: 100%;
+  }
+
+  &-page-content-wrapper {
+    min-height: 100%;
+    margin-bottom: -$footer-height;
+
+    &:after {
+      content: "";
+      display: block;
+      height: $footer-height;
+    }
+  }
+
+  &-wrapper {
+    height: $footer-height;
+  }
+
+  @each $breakpoint, $height in $breakpoints {
+    @include media($breakpoint) {
+      &-page-content-wrapper {
+        margin-bottom: -$height;
+
+        &:after {
+          height: $height;
+        }
+      }
+
+      &-wrapper {
+        height: $height;
+      }
+    }
+  }
+}
