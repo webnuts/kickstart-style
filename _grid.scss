@@ -28,9 +28,6 @@
   &#{$prefix}-outer-container {
     @include outer-container;
   }
-  &#{$prefix}-omega {
-    @include omega();
-  }
   &#{$prefix}-fill-parent {
     @include fill-parent();
   }
@@ -43,6 +40,9 @@
     &#{$prefix}-shift#{$column-index} {
       @include shift($column-index);
     }
+  }
+  &#{$prefix}-omega {
+    @include omega();
   }
   @for $column-index from 1 through $grid-columns {
     &#{$prefix}-omega#{$column-index} {
