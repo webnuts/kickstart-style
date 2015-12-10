@@ -33,7 +33,7 @@
 }
 
 @mixin build-grid($vertical-gap, $prefix:'') {
-  $#{$prefix}-row {
+  &#{$prefix}-row {
     @include row();
   }
   &#{$prefix}-outer-container {
