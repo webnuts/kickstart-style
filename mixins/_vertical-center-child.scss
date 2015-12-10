@@ -1,14 +1,12 @@
 @mixin vertical-center-child() {
   // https://css-tricks.com/centering-in-the-unknown/
-  text-align: center;
-  white-space: nowrap;
+  //white-space: nowrap;
 
   &:before {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-    margin-right: -0.25em;
   }
 
   & > * {
