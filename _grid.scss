@@ -67,7 +67,7 @@
   }
   @for $gap-index from 1 through 10 {
     &#{$prefix}-gap#{$gap-index}-above {
-      margin-bottom: $vertical-gap * $gap-index + px;
+      margin-top: $vertical-gap * $gap-index + px;
     }
   }
 }
