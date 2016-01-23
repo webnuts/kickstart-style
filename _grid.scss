@@ -57,7 +57,7 @@
   }
   @for $column-index from 1 through $grid-columns {
     &#{$prefix}-omega#{$column-index} {
-      @include omega(#{$column-index}n);
+      @include omega($column-index + 0n);
     }
   }
   @for $gap-index from 1 through 10 {
