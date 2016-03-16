@@ -38,9 +38,11 @@
   }
   @for $column-index from 1 through $grid-columns {
     &#{$prefix}-span#{$column-index}-nogap {
-      @include span-columns($column-index, block-collapse);
+      float: left;
+      display: block;
+      width: percentage($column-index / $grid-columns);
     }
-  }  
+  }
   @for $column-index from 1 through $grid-columns {
     &#{$prefix}-span#{$column-index} {
       @include span-columns($column-index);
