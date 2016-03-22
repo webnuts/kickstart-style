@@ -61,12 +61,12 @@
       @include omega($column-index + 0n);
     }
   }
-  @for $gap-index from 1 through 10 {
+  @for $gap-index from 0 through 10 {
     &#{$prefix}-gap#{$gap-index}-below {
       margin-bottom: $vertical-gap * $gap-index + px;
     }
   }
-  @for $gap-index from 1 through 10 {
+  @for $gap-index from 0 through 10 {
     &#{$prefix}-gap#{$gap-index}-above {
       margin-top: $vertical-gap * $gap-index + px;
     }
