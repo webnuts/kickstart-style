@@ -48,7 +48,7 @@
       @include span-columns($column-index);
     }
   }
-  @for $column-index from 1 through $grid-columns - 1 {
+  @for $column-index from 0 through $grid-columns - 1 {
     &#{$prefix}-shift#{$column-index} {
       @include shift($column-index);
     }
