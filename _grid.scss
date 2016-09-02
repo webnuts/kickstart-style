@@ -50,6 +50,12 @@
       width: percentage($column-index / $grid-columns);
     }
   }
+  /* Does not support negative shift  */
+  @for $column-index from 1 through $grid-columns {
+    &#{$prefix}-shift#{$column-index}-nogap {
+      margin-left: percentage($column-index / $grid-columns);
+    }
+  }
   @for $column-index from 1 through $grid-columns {
     &#{$prefix}-span#{$column-index} {
       @include span-columns($column-index);
