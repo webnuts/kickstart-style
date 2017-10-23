@@ -48,6 +48,7 @@
       float: left;
       display: block;
       width: percentage($column-index / $grid-columns);
+      margin-right: 0;
     }
   }
   /* Does not support negative shift  */
